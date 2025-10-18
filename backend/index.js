@@ -8,11 +8,11 @@ import path from "path";
 import { fileURLToPath } from "url";
 import cookieParser from "cookie-parser";
 const app = express();
-import { connectDB } from "./dbConfig.js";
+import { client } from "./dbConfig.js";
 const PORT = 3000;
 
 dotenv.config();
-connectDB();
+client.connect()
 app.use(
   cors({
     origin: "http://localhost:5173", // your frontend origin
